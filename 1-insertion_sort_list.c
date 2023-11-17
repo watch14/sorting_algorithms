@@ -29,6 +29,9 @@ void insertion_sort_list(listint_t **list)
 			before->next = now->next;
 			now->previous = before->previous;
 
+			before->previous = now;
+			now->next = before;
+
 			if (now->previous == NULL)
 				*list = now;
 			print(*list);
