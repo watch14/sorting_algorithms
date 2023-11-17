@@ -4,19 +4,18 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	size_t i, j;
-	listint_t *now = malloc(sizeof(listint_t));
+	listint_t *now = *list->next;
+	listint_t *before = now->previous;
 
-	if (now == NULL)
+	if (list == NULL)
 		return;
 
-	if (!list)
-		return;
-
-	while (list)
-		list = list->next;
+	while (now != NULL)
 	{
-		if (list->n < list->prev->n)
+		if (before->previous != NULL)
+			before->previous->next = now:
+		if (now->next != NULL)
+			now->next->previous = before
 		{
 			now = list->prev;
 			list->prev = list;
@@ -24,6 +23,7 @@ void insertion_sort_list(listint_t **list)
 
 			print_list(list);
 		}
+
+		now->next;
 	}
-	free(now);
 }
