@@ -36,13 +36,8 @@ void insertion_sort_list(listint_t **list)
 				*list = now;
 			print_list(*list);
 
-			if (now->prev == NULL || now->prev->n <= now->n)
-				break;
-
 			before = now->prev;
 		}
 		now = now->next;
 	}
-	free(now);
-	free(before);
 }
