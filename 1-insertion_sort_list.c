@@ -35,6 +35,11 @@ void insertion_sort_list(listint_t **list)
 			if (now->previous == NULL)
 				*list = now;
 			print(*list);
+
+			if (now->previous == NULL || now->previous->n <= now->n)
+				break;
+
+			before = now->previous;
 		}
 		now = now->next;
 	}
