@@ -43,6 +43,4 @@ void insertion_sort_list(listint_t **list)
 		}
 		now = now->next;
 	}
-	free(now);
-	free(before);
 }
