@@ -1,5 +1,6 @@
 #ifndef SORT_H
 #define SORT_H
+
 #include <stdbool.h>
 #include <stdio.h>
 
@@ -27,4 +28,4 @@ void selection_sort(int *array, size_t size);
 void quick_sort(int *array, size_t size);
 
 
-#endif
+#endif /* SORT_H */
