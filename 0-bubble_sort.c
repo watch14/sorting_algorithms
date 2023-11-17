@@ -6,7 +6,6 @@
  * @x: Pointer to the first integer.
  * @y: Pointer to the second integer.
  */
-
 void swap(int *x, int *y)
 {
 	int temp = *x;
@@ -21,7 +20,6 @@ void swap(int *x, int *y)
  * @array: Pointer to the array to be sorted.
  * @size: Size of the array.
  */
-
 void bubble_sort(int *array, size_t size)
 {
 	size_t i, j;
