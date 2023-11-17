@@ -1,14 +1,29 @@
 #include "sort.h"
 
-/**
- * swap - Swaps the values of two integers.
- *
- * @x: Pointer to the first integer.
- * @y: Pointer to the second integer.
- */
-void swap(int *x, int *y)
+
+
+void insertion_sort_list(listint_t **list)
 {
-	size_t temp = *x;
-	*x = *y;
-	*y = temp;
+	size_t i, j;
+	listint_t *now = malloc(sizeof(listint_t));
+
+	if (now == NULL)
+		return;
+
+	if (!list)
+		return;
+
+	while (list)
+		list = list->next;
+	{
+		if (list->n < list->prev->n)
+		{
+			now = list->prev;
+			list->prev = list;
+			list = now;
+
+			print_list(list);
+		}
+	}
+	free(now);
 }
