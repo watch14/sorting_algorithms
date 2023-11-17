@@ -10,10 +10,10 @@
  */
 void insertion_sort_list(listint_t **list)
 {
+	listint_t *now = (*list)->next;
+
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
-
-	listint_t *now = (*list)->next;
 
 	while (now != NULL)
 	{
@@ -34,12 +34,10 @@ void insertion_sort_list(listint_t **list)
 
 			if (now->prev == NULL)
 				*list = now;
-
 			print_list(*list);
 
 			before = now->prev;
 		}
-
 		now = now->next;
 	}
 }
