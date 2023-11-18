@@ -30,6 +30,7 @@ void quick_sort(int *array, size_t size)
 	for (i = 0 ; i < size  ; i++)
 	{
 		flag = 0;
+
 		for (j = size - 1 ; j > i ; j--)
 		{
 
