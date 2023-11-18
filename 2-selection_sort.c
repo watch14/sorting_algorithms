@@ -21,22 +21,28 @@ void swap(int *xp, int *yp)
  * @array: The array to be sorted.
  * @size: The size of the array.
  */
+
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min;
+	size_t i, min;
+	int flag = 0, temp;
 
-	if (array == NULL || size < 2)
+	if (array == NULL)
 		return;
-
-	for (i = 0; i < size - 1; i++)
+	for (i = 0; i < size; i++)
 	{
-		min = i;
-		for (j = i + 1; j < size; j++)
-			if (array[j] < array[min])
-				min = j;
-
-		if (min != i)
-			swap(&array[min], &array[i]);
-		print_array(array, size);
+		temp = i;
+		flag = 0;
+		for (min = i + 1; min < size; min++)
+		{
+			if (array[temp] > array[min])
+			{
+				temp = min;
+				flag += 1;
+			}
+		}
+		swap(&array[i], &array[temp]);
+		if (flag != 0)
+			print_array(array, size);
 	}
 }
