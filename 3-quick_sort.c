@@ -1,6 +1,5 @@
 #include "sort.h"
 
-
 /**
  * swap - Swaps the values of two integers.
  * @x: Pointer to the first integer.
@@ -16,52 +15,51 @@ void swap(int *x, int *y)
 /**
  * partition - Partitions the array for the Quick Sort algorithm.
  * @array: The array to be partitioned.
- * @start: The starting index of the partition.
- * @end: The ending index of the partition.
+ * @low: The starting index of the partition.
+ * @high: The ending index of the partition.
  * @size: The size of the array.
  * Return: The index of the pivot.
  */
-int partition(int *array, int start, int end, size_t size)
+int partition(int *array, int low, int high, size_t size)
 {
-	int i, j, pivot;
+	int pivot = array[high];
+	int i = low - 1;
 
-	i = start - 1;
-	pivot = array[end];
-
-	for (j = start; j <= end - 1; j++)
+	for (int j = low; j <= high - 1; j++)
 	{
 		if (array[j] < pivot)
 		{
 			i++;
-			swap(&array[i], &array[j]);
+			if (i != j)
+			{
+				swap(&array[i], &array[j]);
+				print_array(array, size);
+			}
 		}
 	}
-	i++;
-	swap(&array[i], &array[end]);
-
-	print_array(array, size);
-
-	return (i);
+	if (array[i + 1] != array[high])
+	{
+		swap(&array[i + 1], &array[high]);
+		print_array(array, size);
+	}
+	return (i + 1);
 }
 
 /**
  * quick_sort_recursive - Recursively sorts the array using Quick Sort.
  * @array: The array to be sorted.
- * @start: The starting index of the array.
- * @end: The ending index of the array.
+ * @low: The starting index of the array.
+ * @high: The ending index of the array.
  * @size: The size of the array.
  */
-void quick_sort_recursive(int *array, int start, int end, size_t size)
+void quick_sort_recursive(int *array, int low, int high, size_t size)
 {
-	if (array == NULL || size < 2)
-		return;
-
-	if (start < end)
+	if (low < high)
 	{
-		int pivot = partition(array, start, end, size);
+		int pivot = partition(array, low, high, size);
 
-		quick_sort_recursive(array, start, pivot - 1, size);
-		quick_sort_recursive(array, pivot + 1, end, size);
+		quick_sort_recursive(array, low, pivot - 1, size);
+		quick_sort_recursive(array, pivot + 1, high, size);
 	}
 }
 
@@ -72,8 +70,11 @@ void quick_sort_recursive(int *array, int start, int end, size_t size)
  */
 void quick_sort(int *array, size_t size)
 {
-	int start = 0;
-	int end = size - 1;
+	if (array == NULL || size < 2)
+		return;
 
-	quick_sort_recursive(array, start, end, size);
+	int low = 0;
+	int high = size - 1;
+
+	quick_sort_recursive(array, low, high, size);
 }
