@@ -53,6 +53,9 @@ int partition(int *array, int start, int end, size_t size)
  */
 void quick_sort_recursive(int *array, int start, int end, size_t size)
 {
+	if (array == NULL || size < 2)
+		return;
+
 	if (start < end)
 	{
 		int pivot = partition(array, start, end, size);
