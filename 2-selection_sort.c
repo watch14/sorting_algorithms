@@ -25,7 +25,7 @@ void swap(int *xp, int *yp)
 void selection_sort(int *array, size_t size)
 {
 	size_t i, min;
-	int flag = 0, temp;
+	int flag, temp;
 
 	if (array == NULL)
 		return;
