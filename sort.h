@@ -23,14 +23,13 @@ typedef struct listint_s
 void print_array(const int *array, size_t size);
 void print_list(const listint_t *list);
 
-/* Task 0 */
 void bubble_sort(int *array, size_t size);
-/* Task 1 */
+
 void insertion_sort_list(listint_t **list);
-/* Task 2 */
+
 void swap(int *xp, int *yp);
 void selection_sort(int *array, size_t size);
-/* Task 3 */
+
 void quick_sort(int *array, size_t size);
 void quick_sort_recursive(int *array, ssize_t low, ssize_t high, size_t size);
 ssize_t lomuto_partition(int *array, ssize_t low, ssize_t high, size_t size);
