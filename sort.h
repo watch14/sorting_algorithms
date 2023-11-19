@@ -38,4 +38,8 @@ void merge_sort(int *array, size_t size);
 void merge_sort_recursive(int *array, size_t left, size_t right);
 void merge(int *array, int *left_array, int *right_array,
 		size_t left_size, size_t right_size);
+
+static void sift_down(int *array, size_t start, size_t end, size_t size);
+void heap_sort(int *array, size_t size);
+
 #endif /* SORT_H */
