@@ -33,9 +33,9 @@ void selection_sort(int *array, size_t size);
 
 /* TASK 3 */
 void quick_sort(int *array, size_t size);
+void quick_sort_recursive(int *array, int low, int high, size_t size);
 int lomuto_partition(int *array, int low, int high, size_t size);
-void quicksort(int *array, int low, int high, size_t size);
-
+void swap(int *x, int *y);
 
 /* ADVANCED */
 
