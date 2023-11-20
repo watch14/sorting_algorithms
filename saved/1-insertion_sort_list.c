@@ -1,43 +1,41 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - Sorts a doubly linked list.
- *
- * @list: Pointer to a pointer to the head of the linked list.
- *
- * Description: The function sorts the doubly linked list in place by swapping
- * nodes, and prints the list after each swap.
+ * insertion_sort_list - Sorts a doubly linked list of integers
+ *                       in ascending order using Insertion sort
+ * @list: Pointer to the head of the list
  */
+
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *now = (*list)->next;
+	listint_t *current, *temp;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 		return;
 
-	while (now != NULL)
+	current = (*list)->next;
+
+	while (current != NULL)
 	{
-		listint_t *before = now->prev;
+		temp = current;
+		current = current->next;
 
-		while (before != NULL && before->n > now->n)
+		while (temp->prev != NULL && temp->n < temp->prev->n)
 		{
-			if (before->prev != NULL)
-				before->prev->next = now;
-			if (now->next != NULL)
-				now->next->prev = before;
+			if (temp->next != NULL)
+				temp->next->prev = temp->prev;
 
-			before->next = now->next;
-			now->prev = before->prev;
+			temp->prev->next = temp->next;
+			temp->next = temp->prev;
+			temp->prev = temp->prev->prev;
+			temp->next->prev = temp;
 
-			before->prev = now;
-			now->next = before;
+			if (temp->prev == NULL)
+				*list = temp;
+			else
+				temp->prev->next = temp;
 
-			if (now->prev == NULL)
-				*list = now;
 			print_list(*list);
-
-			before = now->prev;
 		}
-		now = now->next;
 	}
 }
