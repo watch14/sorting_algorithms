@@ -5,6 +5,7 @@
  *                       in ascending order using Insertion sort
  * @list: Pointer to the head of the list
  */
+
 void insertion_sort_list(listint_t **list)
 {
 	listint_t *current, *temp;
