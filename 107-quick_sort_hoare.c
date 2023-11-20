@@ -24,9 +24,10 @@ int hoare_partition(int *array, int low, int high, size_t size)
 		} while (array[j] > pivot);
 
 		if (i >= j)
-			return j;
+			return (j);
 
 		int temp = array[i];
+
 		array[i] = array[j];
 		array[j] = temp;
 
