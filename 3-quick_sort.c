@@ -14,6 +14,7 @@ void swap(int *a, int *b)
 	*b = temp;
 }
 
+
 /**
  * lomuto_partition - Lomuto partition scheme for Quick Sort
  *
@@ -21,8 +22,7 @@ void swap(int *a, int *b)
  * @low: Starting index of the partition
  * @high: Ending index of the partition
  * @size: Number of elements in @array
- *
- * @Return: The final position of the pivot after partitioning
+ * Return: The final position of the pivot after partitioning
  */
 int lomuto_partition(int *array, int low, int high, size_t size)
 {
