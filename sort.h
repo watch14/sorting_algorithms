@@ -33,9 +33,6 @@ void selection_sort(int *array, size_t size);
 
 /* TASK 3 */
 void quick_sort(int *array, size_t size);
-void quick_sort_recursive(int *array, int low, int high, size_t size);
-int lomuto_partition(int *array, int low, int high, size_t size);
-void swap(int *x, int *y);
 
 /* ADVANCED */
 
@@ -44,8 +41,5 @@ void shell_sort(int *array, size_t size);
 
 /* TASK 101 */
 void swap_nodes(listint_t **list, listint_t *node);
-void cocktail_forward(listint_t **list, int *swapped);
-void cocktail_backward(listint_t **list, listint_t *current, int *swapped);
-void cocktail_sort_list(listint_t **list);
 
-#endif /* SORT_H */
+#endif
