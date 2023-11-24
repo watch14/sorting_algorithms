@@ -39,29 +39,4 @@ void quick_sort(int *array, size_t size);
 /* TASK 100 */
 void shell_sort(int *array, size_t size);
 
-/* TASK 101 */
-void cocktail_sort_list(listint_t **list);
-void swap_nodes(listint_t **list, listint_t *node);
-
-/* TASK 104 */
-void heapify(int *array, size_t size, size_t start, size_t end);
-void heap_sort(int *array, size_t size);
-
-/* TASK 105 */
-void radix_sort(int *array, size_t size);
-int getMax(int *array, size_t size);
-void countingSort(int *array, size_t size, int exp);
-
-/* TASK 106 */
-void bitonic_sort(int *array, size_t size);
-void bitonic_recursive(int *array, size_t size, int dir);
-void bitonic_merge(int *array, size_t size, int dir);
-void bitonic_compare(int *array, size_t size, int dir);
-
-/* TASK 107 */
-void quick_sort_hoare(int *array, size_t size);
-void quick_sort_recursive(int *array, int low, int high, size_t size);
-int hoare_partition(int *array, int low, int high, size_t size);
-void swap_elements(int *a, int *b);
-
 #endif
