@@ -34,7 +34,7 @@ void quick_sort_recursive(int *array, int low, int high, size_t size)
 }
 
 /**
- * hoare_partition - Chooses a pivot and partitions the array into two segments.
+ * hoare_partition - Chooses a pivot and partitions.
  * @array: The array to be partitioned.
  * @low: The starting index of the partition.
  * @high: The ending index of the partition.
@@ -49,18 +49,16 @@ int hoare_partition(int *array, int low, int high, size_t size)
 
 	while (1)
 	{
-		do
-		{
+		do {
 			i++;
 		} while (array[i] < pivot);
 
-		do
-		{
+		do {
 			j--;
 		} while (array[j] > pivot);
 
 		if (i >= j)
-			return j;
+			return (j);
 
 		swap_elements(&array[i], &array[j]);
 		print_array(array, size);
