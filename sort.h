@@ -43,6 +43,11 @@ void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void swap_nodes(listint_t **list, listint_t *node);
 
+/* TASK 105 */
+void radix_sort(int *array, size_t size);
+int getMax(int *array, size_t size);
+void countingSort(int *array, size_t size, int exp);
+
 /* TASK 106 */
 void bitonic_sort(int *array, size_t size);
 void bitonic_recursive(int *array, size_t size, int dir);
