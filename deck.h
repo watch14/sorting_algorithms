@@ -3,6 +3,8 @@
 
 #include <stddef.h>
 #include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * enum kind_e - Suit of a card
@@ -45,5 +47,7 @@ typedef struct deck_node_s
 
 void print_deck(const deck_node_t *deck);
 void sort_deck(deck_node_t **deck);
+
+void swap_nodes(deck_node_t **deck, deck_node_t *node1, deck_node_t *node2);
 
 #endif /* DECK_H */
