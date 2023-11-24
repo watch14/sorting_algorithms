@@ -1,6 +1,4 @@
 #include "deck.h"
-#include <stdio.h>
-#include <stdlib.h>
 
 /**
  * swap_nodes - Swaps two nodes in a doubly linked list
