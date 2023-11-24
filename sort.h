@@ -43,4 +43,10 @@ void shell_sort(int *array, size_t size);
 void cocktail_sort_list(listint_t **list);
 void swap_nodes(listint_t **list, listint_t *node);
 
+/* TASK 107 */
+void quick_sort_hoare(int *array, size_t size);
+void quick_sort_recursive(int *array, int low, int high, size_t size);
+int hoare_partition(int *array, int low, int high, size_t size);
+void swap_elements(int *a, int *b);
+
 #endif
